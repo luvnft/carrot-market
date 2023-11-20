@@ -3,7 +3,8 @@ import { useState } from "react";
 import {useForm} from 'react-hook-form';
 import Button from "../components/button";
 import Input from "../components/input";
-import { cls } from "../libs/utils";
+import { cls } from "../libs/client/utils";
+import useMutation from "../libs/client/useMutation";
 
 interface EnterForm {
   email?: string;
@@ -12,6 +13,7 @@ interface EnterForm {
 }
 
 const Enter: NextPage = () => { 
+  const [enter, {loading, data, error}] = useMutation();
   const [submitting, setSubmitting] = useState(false);
   const { register, watch, reset, handleSubmit } = useForm<EnterForm>();
   const [method, setMethod] = useState<"email" | "phone">("email");
