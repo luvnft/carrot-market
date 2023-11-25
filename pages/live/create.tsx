@@ -5,7 +5,7 @@ import Layout from '@components/layout';
 import TextArea from '@components/textarea';
 
 interface CustomInputProps {
-  register: any; // Replace 'any' with the correct type for register
+  register: any; // Replace 'any' with the correct type for 'register'
   [key: string]: any; // Adjust this to match the expected props for the input element
 }
 
