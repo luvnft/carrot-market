@@ -14,11 +14,15 @@ const CustomInput: React.FC<CustomInputProps> = ({ register, ...otherProps }) =>
 };
 
 const Create: NextPage = () => {
+  // Assuming 'register' is obtained from some form library like React Hook Form
+  const { register } = useForm(); // Import the useForm hook from your form library
+
   return (
     <Layout canGoBack title="Go Live">
       <form className="space-y-4 py-10 px-4">
-        <CustomInput required label="Name" name="name" type="text" />
+        <CustomInput register={register} required label="Name" name="name" type="text" />
         <CustomInput
+          register={register}
           required
           label="Price"
           placeholder="0.00"
