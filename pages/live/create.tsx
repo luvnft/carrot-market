@@ -1,11 +1,15 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Button from '@components/button';
-import Input, { InputProps } from '@components/input';
 import Layout from '@components/layout';
 import TextArea from '@components/textarea';
 
-const CustomInput: React.FC<InputProps> = ({ register, ...otherProps }) => {
+interface CustomInputProps {
+  register: any; // Replace 'any' with the correct type for register
+  [key: string]: any; // Adjust this to match the expected props for the input element
+}
+
+const CustomInput: React.FC<CustomInputProps> = ({ register, ...otherProps }) => {
   return <input ref={register} {...otherProps} />;
 };
 
